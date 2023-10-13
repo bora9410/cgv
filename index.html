@@ -88,13 +88,13 @@
             });
 
             //영화예매  hover
-            // $("#chart .wrap ul li .hover").hide();
-            // $("#chart .wrap ul li").mouseenter(function(){
-            //    $(this).find("#chart .wrap ul li .hover").show();
-            // });
-            // $("#chart .wrap ul li").mouseleave(function(){
-            //    $(this).find("#chart .wrap ul li .hover").hide();
-            // });
+            $("#chart .wrap ul li .hover").hide();
+            $("#chart .wrap ul li").mouseenter(function(){
+               $(this).find("#chart .wrap ul li .hover").show();
+            });
+            $("#chart .wrap ul li").mouseleave(function(){
+               $(this).find("#chart .wrap ul li .hover").hide();
+            });
 
             // 영화예매 슬릭 화살표 반복 설정
             $("ul.exmovie button.slick-prev , ul.exmovie button.slick-next").hide();
