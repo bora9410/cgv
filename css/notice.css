@@ -1,0 +1,133 @@
+#notice {
+  padding-bottom: 100px;
+}
+#notice .wrap {
+  display: flex;
+  width: 980px;
+  justify-content: space-between;
+}
+#notice .wrap .service {
+  position: relative;
+  border: 1px solid #e4e4e4;
+  border-radius: 20px;
+  width: 670px;
+  height: 185px;
+  padding: 30px 30px;
+}
+#notice .wrap .service .not {
+  width: 446px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e4e4e4;
+}
+#notice .wrap h3{
+  font-weight: 500;
+  font-size: 16px;
+  color: #222;
+}
+#notice .wrap .service .not h3 {
+  
+}
+#notice .wrap .service .not a {
+  font-size: 12px;
+  color: #666;
+  border-radius: 30px;
+  border: 1px solid #e3e3e3;
+  width: 35px;
+  text-align: center;
+  transform: translateX(-15px);
+  padding: 3px 8px;
+}
+#notice .wrap .service .not span {
+  width: 460px;
+  font-size: 14px;
+  color: #222;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-left: 25px;
+  margin-right: 20px;
+}
+#notice .wrap .service .center {
+  width: 460px;
+  padding: 25px 0;
+}
+#notice .wrap .service .center .text {
+
+}
+#notice .wrap .service .center .text h3 {
+  
+}
+#notice .wrap .service .center .call {
+  margin-left: 30px;
+}
+#notice .wrap .service .center .call > p{
+  font-weight: 700;
+  font-size: 14px;
+  color: #222;
+  padding-bottom: 3px;
+}
+#notice .wrap .service .center .call .cs-notice {
+  font-size: 14px;
+  color: #222;
+  line-height: 1.7;
+}
+#notice .wrap .service .center .call .cs-notice p{
+  
+  font-size: 14px;
+  color: #666;
+}
+#notice .wrap .service .center .tag {
+  padding: 25px 0;
+  gap: 15px;
+  display: flex;
+}
+#notice .wrap .service .center .tag span {
+  
+}
+#notice .wrap .service .center .tag span a {
+  
+  font-size: 14px;
+  color: #222;
+  background-color: #f6f6f6;
+  border-radius: 5px;
+  padding: 7px 14px;
+}
+#notice .wrap .download {
+  position: absolute;
+  top: 48px;
+  right: 10px;
+  /*! padding: 24px 26px 20px 30px; */
+  display: flex;
+  flex-direction: column;
+  width: 222px;
+  text-align: center;
+  border-left: 1px solid #e4e4e4;
+}
+#notice .wrap .download h3 {
+  
+}
+#notice .wrap .download span {
+  font-size: 12px;
+  color: #222;
+}
+#notice .wrap .download .qr {
+  
+}
+#notice .wrap .download .qr img {
+  width: 60px;
+  height: 60px;
+  padding: 20px 0;
+}
+#notice .wrap .download p {
+  font-size: 12px;
+  color: #222;
+}
+#notice .wrap .ad {
+  
+}
+#notice .wrap .ad img {
+  
+  width: 211px;
+  height: 248px;
+  border-radius: 30px;
+}

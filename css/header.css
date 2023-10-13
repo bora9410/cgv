@@ -1,0 +1,101 @@
+header { 
+}
+header .wrap {
+    width: 980px;
+}
+header .wrap nav.top {
+    justify-content: space-between;
+    padding: 30px 0;
+}
+header .wrap nav.top h1 {
+}
+header .wrap nav.top h1 a{
+    display: flex;
+    align-items: end;
+    font-size: 17px;
+    font-weight: 200;
+}
+header .wrap nav.top h1 span {
+    display: inline-block;
+    font-size: 0;
+    background-image: url(../img/logo.png);
+    width: 117px;
+    height: 53px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+header .wrap nav.top ul {
+    gap: 30px;
+}
+header .wrap nav.top ul li { 
+}
+header .wrap nav.top ul li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header .wrap nav.top ul li a figure { 
+}
+header .wrap nav.top ul li a figure img {
+    width: 36px;
+    height: 36px;
+}
+header .wrap nav.top ul li a p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.462em;
+}
+header .sec {
+    border-top: 1px solid #eee;
+    border-bottom: 2px solid #fb4357;
+}
+header .sec nav.bottom {
+    width: 980px;
+    height: 45px;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+header .sec nav.bottom ul{
+    gap: 50px;
+}
+header .sec nav.bottom ul li {
+    
+} 
+header .sec nav.bottom li a {
+    font-weight: 500;
+    font-size: 16px;
+}
+header .sec nav.bottom li:nth-child(3) a{
+    font-weight: 700;
+    color: #fb4357;
+}
+header .sec nav.bottom li a:hover {
+    color: #fb4357;
+}
+header .sec form {
+}
+header .sec nav.bottom form{
+    /*! position: absolute; */
+/*     right: 300px; */
+    /*! display: flex; */
+    border-left: 1px solid #cacaca;
+    border-right: 1px solid #cacaca;
+    padding: 0 5px;
+} 
+header .sec nav.bottom form input {
+    border: none;
+    width: 195px;
+} 
+  header .sec form button {
+    border: none;
+    background-color: transparent;
+    font-size: 0;
+    background-image: url(../img/search.png);
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  

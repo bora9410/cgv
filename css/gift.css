@@ -1,0 +1,70 @@
+#gift {
+  padding: 30px 0;
+}
+#gift .wrap {
+ width: 980px;
+}
+#gift .wrap h2{
+  visibility: hidden;
+}
+#gift .wrap ul.giftcon{
+  
+}
+#gift .wrap ul.giftcon li.gift-item{
+  padding: 0px 20px 20px;
+  border: 1px solid #e4e4e4;
+  border-radius: 10px;
+  width: calc(100% / 3);
+  margin-left: 25px;
+}
+#gift .wrap ul.giftcon li.gift-item article{
+
+}
+#gift .wrap ul.giftcon li.gift-item article .text-1{
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 20px;
+  color: #222;
+  padding: 25px 0;
+}
+#gift .wrap ul.giftcon li.gift-item article .text-1 h3 {
+  font-weight: bold;
+}
+#gift .wrap ul.giftcon li.gift-item article .text-1 a.watch{
+  font-size: 12px;
+  color: #666;
+  border-radius: 30px;
+  border: 1px solid #e3e3e3;
+  width: 35px;
+  text-align: center;
+  line-height: 1.8;
+  padding: 0 10px;
+}
+#gift .wrap ul.giftcon li.gift-item article .tickets{
+
+}
+#gift .wrap ul.giftcon li.gift-item article .tickets a{
+  display: flex;
+  align-items: center;
+}
+#gift .wrap ul.giftcon li.gift-item article .tickets a img{
+  width: 74px;
+  height: 76px;
+  border-radius: 10px;
+  margin-right: 15px;
+  margin-bottom: 20px;
+}
+#gift .wrap ul.giftcon li.gift-item .tickets a .text-2{
+  text-align: left;
+}
+#gift .wrap ul.giftcon li.gift-item .tickets a .text-2 h4{
+  font-weight: 500;
+  font-size: 14px;
+  color: #222;
+}
+#gift .wrap ul.giftcon li.gift-item .tickets a .text-2 span{
+  font-weight: 700;
+  font-size: 16px;
+  color: #222;
+}

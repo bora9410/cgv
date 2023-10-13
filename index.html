@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>copy_영화 그 이상의 감동. CGV</title>
+    <link rel="shortcut icon" href="https://img.cgv.co.kr/theater_img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/wgnb.css">
+    <link rel="stylesheet" href="css/title.css">
+    <link rel="stylesheet" href="css/chart.css">
+    <link rel="stylesheet" href="css/event.css">
+    <link rel="stylesheet" href="css/special.css">
+    <link rel="stylesheet" href="css/gift.css">
+    <link rel="stylesheet" href="css/notice.css">
+    <link rel="stylesheet" href="css/chicken.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Titillium+Web:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- 제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <!-- 슬릭 -->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+    <script src="slick/slick.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            // 타이틀 아코디언 메뉴 슬라이드다운
+            $("div.wgnb").hide();
+            $("header .sec nav.bottom ul li").mouseenter(function(){
+                $("div.wgnb").slideDown();
+            });
+            $("header .wrap, section#title").mouseenter(function(){
+                $("div.wgnb").slideUp();
+            });
+
+            // 타이틀 비디오 재생 및 일시정지
+            var sample = $("#title .wrap .movie video").get(0);
+            $(".play").on("click",function(){
+                sample.play();
+                return false;
+            });
+            $(".stop").on("click",function(){
+                sample.pause();
+                return false;
+            });
+            $(".sound").on("click",function(){
+                sample.prop('muted', false);
+                return false;
+             });
+
+            // 영화 순위 슬릭
+            $('.main_slick').slick({
+                infinite: false,
+                autoplay: true,
+                autoplayspeed: 800,
+                slidesToShow: 5,
+                slidesToScroll: 5
+            });
+
+            // 영화순위 리스트 아코디언 메뉴
+            // 1. 메뉴a만 나오고 나머지 다 hide 시키기
+            $("#chart .wrap ul.exmovie li").hide();
+            $("#chart .wrap ul.movie li").show();
+            // 2. 메뉴 클릭하면 해당 리스트 나오는 이벤트 설정하기
+            $("#chart .wrap .head h3.prev").click(function(){
+                $(this).css("color","black");
+                $("#chart .wrap .head h3.chart").css("color","#666");
+                $("#chart .wrap ul.exmovie li").show();
+                $("#chart .wrap ul.movie li").hide();
+            });
+            $("#chart .wrap .head h3.chart").click(function(){
+                $(this).css("color","black");
+                $("#chart .wrap .head h3.prev").css("color","#666");
+                $("#chart .wrap ul.movie li").show();
+                $("#chart .wrap ul.exmovie li").hide();
+            });
+
+            //영화예매  hover
+            // $("#chart .wrap ul li .hover").hide();
+            // $("#chart .wrap ul li").mouseenter(function(){
+            //    $(this).find("#chart .wrap ul li .hover").show();
+            // });
+            // $("#chart .wrap ul li").mouseleave(function(){
+            //    $(this).find("#chart .wrap ul li .hover").hide();
+            // });
+
+            // 영화예매 슬릭 화살표 반복 설정
+            $("ul.exmovie button.slick-prev , ul.exmovie button.slick-next").hide();
+            $("#chart .wrap .head h3.chart").click(function(){
+                $("ul.exmovie button.slick-prev , ul.exmovie button.slick-next").hide();
+                $("ul.movie button.slick-prev , ul.movie button.slick-next").show();
+            });
+            $("#chart .wrap .head h3.prev").click(function(){
+                $("ul.movie button.slick-prev , ul.movie button.slick-next").hide();
+                $("ul.exmovie button.slick-prev , ul.exmovie button.slick-next").show();
+            });
+
+            // 특별관 이미지 동시에 보여지게
+            var n=0;
+            $("#special .wrap ul.pic li a").not("a:eq("+n+")").hide();
+            $("#special .wrap ul.text li:first-child").addClass("cinema");
+            $("#special .wrap ul.text li").mouseenter(function(){
+                $(this).addClass("cinema");
+                $(this).siblings().removeClass("cinema");
+                n=$(this).index();
+                $("#special .wrap ul.pic li a:eq("+n+")").show();
+                $("#special .wrap ul.pic li a").not("a:eq("+n+")").hide();
+            });
+
+        });
+        </script>
+</head>
+<body>
+    <!-- 상단영역 -->
+    <header>
+        <div class="wrap">
+            <nav class="top flex">
+                <h1 class="h5"><a href=""><span>CGV</span>C U L T U R E P L E X</a></h1>
+                <ul class="member flex">
+                    <li>
+                        <a href="" class="login">
+                            <figure>
+                                <img src="https://img.cgv.co.kr/R2014/images/common/ico/loginPassword.png" alt="로그인">
+                            </figure>
+                            <p>로그인</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="join">
+                            <figure>
+                                <img src="https://img.cgv.co.kr/R2014/images/common/ico/loginJoin.png" alt="회원가입">
+                            </figure>
+                            <p>회원가입</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="account">
+                            <figure>
+                                <img src="https://img.cgv.co.kr/R2014/images/common/ico/loginMember.png" alt="MY CGV">
+                            </figure>
+                            <p>MY CGV</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="customer">
+                            <figure>
+                                <img src="https://img.cgv.co.kr/R2014/images/common/ico/loginCustomer.png" alt="고객센터">
+                            </figure>
+                            <p>고객센터</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="sec">
+            <nav class="bottom flex">
+                <ul class="menu flex">
+                    <li><a href="" class="a">영화</a></li>
+                    <li><a href="" class="a">극장</a></li>
+                    <li><a href="" class="a">예매</a></li>
+                    <li><a href="" class="a">스토어</a></li>
+                    <li><a href="" class="a">이벤트</a></li>
+                    <li><a href="" class="a">혜택</a></li>
+                </ul>
+                <form action="#">
+                    <input type="text">
+                    <button class="search">검색</button>
+                </form>
+            </nav>
+        </div>
+        <div class="wgnb">
+            <div class="center flex">
+                <div class="wsub">
+                    <ul>
+                        <li class="bold"><a href="">영화</a></li>
+                        <li><a href="">무비차트</a></li>
+                        <li><a href="">아트하우스</a></li>
+                        <li><a href="">ICECON</a></li>
+                    </ul>
+                </div>
+                <div class="wsub">
+                    <ul>
+                        <li class="bold"><a href="">극장</a></li>
+                        <li><a href="">CGV 극장</a></li>
+                        <li><a href="">특별관</a></li>
+                    </ul>
+                </div>
+                <div class="wsub">
+                    <ul>
+                        <li class="bold"><a href="">예매</a></li>
+                        <li><a href="">빠른예매</a></li>
+                        <li><a href="">상영스케줄</a></li>
+                        <li><a href="">English Ticketing</a></li>
+                        <li><a href="">English Schedule</a></li>
+                    </ul>
+                </div>
+                <div class="wsub">
+                    <ul>
+                        <li class="bold"><a href="">스토어</a></li>
+                        <li><a href="">패키지</a></li>
+                        <li><a href="">영화관람권</a></li>
+                        <li><a href="">기프트카드</a></li>
+                        <li><a href="">콤보</a></li>
+                        <li><a href="">팝콘</a></li>
+                        <li><a href="">음료</a></li>
+                        <li><a href="">스낵</a></li>
+                        <li><a href="">플레이존</a></li>
+                        <li><a href="">씨네샵</a></li>
+                    </ul>
+                </div>
+                <div class="wsub">
+                    <ul>
+                        <li class="bold"><a href="">이벤트</a></li>
+                        <li><a href="">SPECIAL</a></li>
+                        <li><a href="">영화/예매</a></li>
+                        <li><a href="">멤버십/CLUB</a></li>
+                        <li><a href="">CGV 극장별</a></li>
+                        <li><a href="">제휴할인</a></li>
+                        <li><a href="">당첨자 발표</a></li>
+                        <li><a href="">종료된 이벤트</a></li>
+                    </ul>
+                </div>
+                <div class="wsub">
+                    <ul>
+                        <li class="bold"><a href="">혜택</a></li>
+                        <li><a href="">CGV 할인정보</a></li>
+                        <li><a href="">CLUB 서비스</a></li>
+                        <li><a href="">VIP 라운지</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- 타이틀영역 -->
+    <section id="title">
+        <div class="wrap flex">
+            <div class="head">
+                <h2>여름을 향한 터널, 이별의 출구</h2>
+                <p>시간이 다르게 흐르는 터널,<br>널 만날 수 있을까?</p>
+                <div class="main">
+                    <a href="" class="watch">상세보기</a>
+                    <a href="" class="play">play</a>
+                    <a href="" class="stop">pause</a>
+                    <a href="" class="sound">sound</a>
+                </div>
+            </div>
+            <div class="movie">
+                <div class="video_wrap">
+                    <video autoplay muted controls>
+                        <source src="img/movie.mp4" id="j_movie" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- 내용영역 -->
+    <main>
+        <section id="chart">
+            <div class="wrap padding50 flex flex-column">
+                <h2>무비 차트</h2>
+                <div class="head flex">
+                    <header class="flex">
+                        <h3 class="chart">무비차트</h3>
+                        <h3 class="prev">상영예정작</h3>
+                    </header>
+                    <a href="">전체보기</a>
+                </div>
+                <ul class="movie main_slick flex"> 
+                    <li class="list_a">
+                        <h4 class="h5">잠</h4>
+                        <div class="egg flex">
+                            <p class="eggball"><img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">98%</p>
+                            <p class="percent">예매율 18.6%</p>
+                        </div>
+                        <div class="hover">
+                            <a href="" class="detail">상세보기</a>
+                            <a href="" class="book">예매하기</a>
+                        </div>
+                    </li>
+                    <li class="list_b">
+                        <h4 class="h5">아이유 콘서트 : 더 골든 아워</h4>
+                        <div class="egg flex">
+                            <p class="eggball"><img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">99%</p>
+                            <p class="percent">예매율 18.0%</p>
+                        </div>
+                        <div class="hover">
+                            <a href="" class="detail">상세보기</a>
+                            <a href="" class="book">예매하기</a>
+                        </div>
+                    </li>
+                    <li class="list_c">
+                        <h4 class="h5">오펜하이머</h4>
+                        <div class="egg flex">
+                            <p class="eggball"><img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">93%</p>
+                            <p class="percent">예매율 16.7%</p>
+                        </div>
+                        <div class="hover">
+                            <a href="" class="detail">상세보기</a>
+                            <a href="" class="book">예매하기</a>
+                        </div>
+                    </li>
+                    <li  class="list_d">
+                        <h4 class="h5">해리 포터와 혼혈 왕자</h4>
+                        <div class="egg flex">
+                            <p class="eggball"><img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">98%</p>
+                            <p class="percent">예매율 10.3%</p>
+                        </div>
+                        <div class="hover">
+                            <a href="" class="detail">상세보기</a>
+                            <a href="" class="book">예매하기</a>
+                        </div>
+                    </li>
+                    <li  class="list_e">
+                        <h4 class="h5">베니스 유령 살인사건</h4>
+                        <div class="egg flex">
+                            <p class="eggball"><img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">98%</p>
+                            <p class="percent">예매율 8.0%</p>
+                        </div>
+                        <div class="hover">
+                            <a href="" class="detail">상세보기</a>
+                            <a href="" class="book">예매하기</a>
+                        </div>
+                    </li>
+                    <li  class="list_f">
+                        <h4 class="h5">여름을 향한 터널, 이별의 출구</h4>
+                        <div class="egg flex">
+                            <p class="eggball"><img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">99%</p>
+                            <p class="percent">예매율 3.2%</p>
+                        </div>
+                        <div class="hover">
+                            <a href="" class="detail">상세보기</a>
+                            <a href="" class="book">예매하기</a>
+                        </div>
+                    </li>
+                    <li  class="list_g">
+                        <h4 class="h5">타겟</h4>
+                        <div class="egg flex">
+                            <p class="eggball"><img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">92%</p>
+                            <p class="percent">예매율 3.1%</p>
+                        </div>
+                        <div class="hover">
+                            <a href="" class="detail">상세보기</a>
+                            <a href="" class="book">예매하기</a>
+                        </div>
+                    </li>
+                    <li  class="list_h">
+                        <h4 class="h5">서태지 25주년 라이브 타임: 트래블러</h4>
+                        <div class="egg flex">
+                            <p class="eggball"><img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png" alt="Golden Egg great">98%</p>
+                            <p class="percent">예매율 2.2%</p>
+                        </div>
+                        <div class="hover">
+                            <a href="" class="detail">상세보기</a>
+                            <a href="" class="book">예매하기</a>
+                        </div>
+                    </li>
+                    <li  class="list_i">
+                        <h4 class="h5">천박사 퇴마 연구소-설경의 비밀</h4>
+                        <div class="egg flex">
+                            <p class="eggball"><img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">99%</p>
+                            <p class="percent">예매율 2.0%</p>
+                        </div>
+                        <div class="hover">
+                            <a href="" class="detail">상세보기</a>
+                            <a href="" class="book">예매하기</a>
+                        </div>
+                    </li>
+                    <li  class="list_j">
+                        <h4 class="h5">신체모음.zip</h4>
+                        <div class="egg flex">
+                            <p class="eggball"><img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">74%</p>
+                            <p class="percent">예매율 1.9%</p>
+                        </div>
+                        <div class="hover">
+                            <a href="" class="detail">상세보기</a>
+                            <a href="" class="book">예매하기</a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="exmovie main_slick flex"> 
+                    <li class="list_a">
+                        <h4 class="h5">아이유 콘서트 : 더 골든 아워</h4>
+                        <div class="egg flex">
+                            <p class="eggball"><img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">99%</p>
+                            <p class="percent">예매율 42.0%</p>
+                        </div>
+                        <div class="hover">
+                            <a href="" class="detail">상세보기</a>
+                            <a href="" class="book">예매하기</a>
+                        </div>
+                    </li>
+                    <li  class="list_b">
+                        <h4 class="h5">베니스 유령 살인사건</h4>
+                        <div class="egg flex">
+                            <p class="eggball"><img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">98%</p>
+                            <p class="percent">예매율 8.0%</p>
+                        </div>
+                        <div class="hover">
+                            <a href="" class="detail">상세보기</a>
+                            <a href="" class="book">예매하기</a>
+                        </div>
+                    </li>
+                    <li class="list_c">
+                        <h4 class="h5">어파이어</h4>
+                        <div class="egg flex">
+                            <p class="eggball"><img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">99%</p>
+                            <p class="percent">예매율 1.8%</p>
+                        </div>
+                        <div class="hover">
+                            <a href="" class="detail">상세보기</a>
+                            <a href="" class="book">예매하기</a>
+                        </div>
+                    </li>
+                    <li class="list_d">
+                        <h4 class="h5">[씨네뮤지엄 Season2.] 프라도 미술관</h4>
+                        <div class="egg flex">
+                            <p class="eggball"><img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">?</p>
+                            <p class="percent">예매율 0.1%</p>
+                        </div>
+                        <div class="hover">
+                            <a href="" class="detail">상세보기</a>
+                            <a href="" class="book">예매하기</a>
+                        </div>
+                    </li>
+                    <li class="list_e">
+                        <h4 class="h5">뮤직 샤펠</h4>
+                        <div class="egg flex">
+                            <p class="eggball"><img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">99%</p>
+                            <p class="percent">예매율 0.1%</p>
+                        </div>
+                        <div class="hover">
+                            <a href="" class="detail">상세보기</a>
+                            <a href="" class="book">예매하기</a>
+                        </div>
+                    </li>
+                    <li class="list_f">
+                        <h4 class="h5">잔고-분노의 적자</h4>
+                        <div class="egg flex">
+                            <p class="eggball"><img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">?</p>
+                            <p class="percent">예매율 0.1%</p>
+                        </div>
+                        <div class="hover">
+                            <a href="" class="detail">상세보기</a>
+                            <a href="" class="book">예매하기</a>
+                        </div>
+                    </li>
+                    <li class="list_g">
+                        <h4 class="h5">안녕, 내일 또 만나</h4>
+                        <div class="egg flex">
+                            <p class="eggball"><img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">?</p>
+                            <p class="percent">예매율 0.1%</p>
+                        </div>
+                        <div class="hover">
+                            <a href="" class="detail">상세보기</a>
+                            <a href="" class="book">예매하기</a>
+                        </div>
+                    </li>
+                    <li class="list_h">
+                        <h4 class="h5">차박- 살인과 낭만의 밤</h4>
+                        <div class="egg flex">
+                            <p class="eggball"><img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">99%</p>
+                            <p class="percent">예매율 0.1%</p>
+                        </div>
+                        <div class="hover">
+                            <a href="" class="detail">상세보기</a>
+                            <a href="" class="book">예매하기</a>
+                        </div>
+                    </li>
+                    <li class="list_i">
+                        <h4 class="h5">책 종이 가위</h4>
+                        <div class="egg flex">
+                            <p class="eggball"><img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">?</p>
+                            <p class="percent">예매율 0.1%</p>
+                        </div>
+                        <div class="hover">
+                            <a href="" class="detail">상세보기</a>
+                            <a href="" class="book">예매하기</a>
+                        </div>
+                    </li>
+                    <li class="list_j">
+                        <h4 class="h5">쿠렌치스 인 잘츠부르크</h4>
+                        <div class="egg flex">
+                            <p class="eggball"><img src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png" alt="Golden Egg Preegg">?</p>
+                            <p class="percent">예매율 0.1%</p>
+                        </div>
+                        <div class="hover">
+                            <a href="" class="detail">상세보기</a>
+                            <a href="" class="book">예매하기</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="event">
+            <div class="wrap padding50 flex flex-column">
+                <div class="head flex">
+                    <h2>EVENT</h2>
+                    <a href="" class="pause">일시정지</a>
+                    <a href="" class="watch">전체보기</a>
+                </div>
+                <div class="contents flex">
+                    <article>
+                        <a href="">
+                            <div class="imgbox">
+                                <img src="img/event1.jpg" alt="[아이유 - 더 골든 아워] IMAX 포스터 증정 이벤트">
+                            </div>
+                            <h3>[아이유 - 더 골든 아워] IMAX 포스터 증정 이벤트</h3>
+                            <p>2023.08.23~2023.09.12</p>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="">
+                            <div class="imgbox">
+                                <img src="img/event2.jpg" alt="[해리포터와 혼혈왕자]4DX 포스터">
+                            </div>
+                            <h3>[해리포터와 혼혈왕자]4DX 포스터</h3>
+                            <p>2023.07.28~2023.08.10</p>
+                        </a>
+                    </article>
+                    <article>
+                        <a href="">
+                            <div class="imgbox">
+                                <img src="img/event3.jpg" alt="[서태지 25주년 라이브 타임-트래블러] 싱어롱 상영회">
+                            </div>
+                            <h3>[서태지 25주년 라이브 타임-트래블러] 싱어롱 상영회</h3>
+                            <p>2023.09.01~2023.09.09</p>
+                        </a>
+                    </article>
+                </div>  
+            </div>
+        </section>  
+        <section id="special">
+            <div class="wrap">
+                <div class="special head flex">
+                    <h2>특별관</h2>
+                    <a href="">전체보기</a>
+                </div>
+                <ul class="pic flex">
+                    <li>
+                        <a href="">
+                            <img src="https://img.cgv.co.kr//Front/Main/2021/1209/16390080561620.png" alt="SUITE CINEMA">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://img.cgv.co.kr//Front/Main/2022/0616/16553622935690.png" alt="CINE & LIVINGROOM">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://img.cgv.co.kr//Front/Main/2021/1130/16382612660240.png" alt="4DX">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://img.cgv.co.kr//Front/Main/2021/1130/16382612660560.png" alt="CINE de CHEF">
+                        </a>
+                    </li>
+                </ul>
+                <ul class="text">
+                    <li>
+                        <a href="" class="flex">
+                            <h3>SUITE CINEMA</h3>
+                            <p>#호텔 컨셉의 프리미엄관</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="flex">
+                            <h3>CINE & LIVINGROOM</h3>
+                            <p>#신개념 소셜 상영관</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="flex">
+                            <h3>4DX</h3>
+                            <p>#모션시트 #오감체험</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="flex">
+                            <h3>CINE de CHEF</h3>
+                            <p>#쉐프가 있는 영화관</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="gift">
+            <div class="wrap">
+                <h2>cgv 선물권</h2>
+                <ul class="giftcon flex">
+                    <li class="gift-item">
+                        <article>
+                            <div class="text-1 flex">
+                                <h3>패키지</h3>
+                                <a href="" class="watch">더보기</a>
+                            </div>
+                            <div class="tickets">
+                                <a href="#">
+                                    <img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/16903335421060.jpg" alt="<런닝맨: 리벤져스> 얼리버드 전용 관람권">
+                                    <div class="text-2">
+                                        <h4>런닝맨: 리벤져스 얼리버드 전용 관람권</h4>
+                                        <span>16,000원</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="tickets">
+                                <a href="">
+                                    <img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/16898965133100.jpg" alt="<핑크퐁 시네마 콘서트3> 패키지 관람권(성인+아동)">
+                                    <div class="text-2">
+                                        <h4>핑크퐁 시네마 콘서트3 패키지 관람권(성인+아동)</h4>
+                                        <span>14,000원</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="tickets">
+                                <a href="">
+                                    <img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/16778218049340.jpg" alt="우리 패키지">
+                                    <div class="text-2">
+                                        <h4>우리 패키지</h4>
+                                        <span>61,000원</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="gift-item">
+                        <article>
+                            <div class="text-1 flex">
+                                <h3>영화관람권</h3>
+                                <a href="" class="watch">더보기</a>
+                            </div>
+                            <div class="tickets">
+                                <a href="">
+                                    <img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/15458911951520.jpg" alt="CGV 골드클래스">
+                                    <div class="text-2">
+                                        <h4>CGV 골드클래스</h4>
+                                        <span>40,000원</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="tickets">
+                                <a href="">
+                                    <img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/16777513183750.jpg" alt="CGV 영화관람권">
+                                    <div class="text-2">
+                                        <h4>4DX관람권</h4>
+                                        <span>19,000원</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="tickets">
+                                <a href="">
+                                    <img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/16105061088530.jpg" alt="4DX관람권">
+                                    <div class="text-2">
+                                        <h4>4DX관람권</h4>
+                                        <span>19,000원</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="gift-item">
+                        <article>
+                            <div class="text-1 flex">
+                                <h3>기프트카드</h3>
+                                <a href="" class="watch">더보기</a>
+                            </div>
+                            <div class="tickets">
+                                <a href="">
+                                    <img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/15940283913270.jpg" alt="파코니야 여름을부탁해">
+                                    <div class="text-2">
+                                        <h4>파코니야 여름을부탁해</h4>
+                                        <span>금액충전형</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="tickets">
+                                <a href="">
+                                    <img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/15936788537310.jpg" alt="파코니의 썸머파티">
+                                    <div class="text-2">
+                                        <h4>파코니의 썸머파티</h4>
+                                        <span>금액충전형</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="tickets">
+                                <a href="">
+                                    <img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/15814124358590.jpg" alt="PACONNIE A형">
+                                    <div class="text-2">
+                                        <h4>PACONNIE A형</h4>
+                                        <span>금액충전형</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </article>
+                    </li>    
+                </ul>
+            </div>
+        </section>  
+        <section id="notice">
+            <div class="wrap">
+                <div class="service flex flex-column">
+                    <div class="not flex">
+                        <h3 class="h6">공지사항</h3>
+                        <span>[기타] 2023 ZEROBASEONE FAN-CON 일부 상영관 중계 취소 안내</span>
+                        <a href="" class="watch">더보기</a>
+                    </div>
+                    <div class="center">
+                        <div class="text flex">
+                            <h3 class="h6">고객센터</h3>
+                            <div class="call">
+                                <p>1544-1122</p>
+                                <div class="cs-notice">
+                                    고객센터 운영시간 (평일 09:00~18:00) 
+                                    <p>업무시간 외 자동응답 안내 가능합니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tag">
+                            <span><a href="">FAQ</a></span>
+                            <span><a href="">1:1 문의</a></span>
+                            <span><a href="">대관/단체 문의</a></span>
+                        </div>
+                    </div>
+                    <div class="download text-center">
+                        <h3 class="h6">앱 다운로드</h3>
+                        <span>CGV앱에서 더 편리하게 이용하세요</span>
+                        <div class="qr">
+                            <img src="https://img.cgv.co.kr/R2014/images/common/img_qrcode.gif" alt="QR코드">
+                        </div>
+                        <p>QR코드를 스캔하고
+                            <br>
+                            앱설치 페이지로 바로 이동하세요
+                        </p>
+                    </div>
+                </div>
+                <div class="ad">
+                    <img src="https://adimg.cgv.co.kr/images/202302/house/CGV_BUGS_226x259.png" alt="">
+                </div>
+            </div>
+        </section>
+        <section id="chicken">
+            <div class="wrap">
+                <h2>크크크치킨 광고</h2>
+                <a href="">
+                    <img src="http://adimg.cgv.co.kr/images/202307/60Chicken/980x240.png" alt="">
+                </a>
+            </div>
+        </section>
+    </main>
+    <!-- 하단영역 -->
+        <footer>
+            <div class="wrap">
+                <ul class="fnb flex">
+                    <li><a href="">회사소개</a></li>
+                    <li><a href="">지속가능경영</a></li>
+                    <li><a href="">IR</a></li>
+                    <li><a href="">채용정보</a></li>
+                    <li><a href="">광고/제휴/출점문의</a></li>
+                    <li><a href="">이용약관</a></li>
+                    <li><a href="">편성기준</a></li>
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a href="">법적고지</a></li>
+                    <li><a href="">이메일주소무단수집거부</a></li>
+                    <li><a href="">윤리경영</a></li>
+                    <li><a href="">사이버감사실</a></li>
+                </ul>
+                <div class="footerbox flex">
+                    <div class="info">
+                        <address>(04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)</address>
+                        <p>대표이사
+                            허민회
+                        사업자등록번호
+                            104-81-45690
+                        통신판매업신고번호
+                            2017-서울용산-0662 <a href="">사업자정보확인</a></p>
+                        <p>
+                            호스팅사업자
+                                CJ올리브네트웍스
+                            개인정보보호 책임자
+                                도형구
+                            대표이메일
+                                cjcgvmaster@cj.net </p>
+                        <p class="p copyright">© CJ CGV. All Rights Reserved</p>
+                    </div>
+                    <div class="familysite">
+                        <input type="text" id="search" name="search">
+                        <label for="search">검색어 입력</label>
+                        <select name="#" id="famliy">
+                            <option value="">계열사 바로가기</option>
+                            <optgroup label="CJ그룹">
+                                <option value="">CJ주식회사</option>
+                            </optgroup>
+                            <optgroup label="식품 & 식품서비스">
+                                <option value="">CJ제일제당</option>
+                                <option value="">CJ푸드빌</option>
+                                <option value="">CJ프레시웨이</option>
+                            </optgroup>
+                            <optgroup label="생명공학">
+                                <option value="">CJ제일제당 BIO사업부문</option>
+                                <option value="">Cj Feed&Card</option>
+                            </optgroup>
+                            <optgroup label="물류 & 신유통">
+                                <option value="">CJ대한통운</option>
+                                <option value="">CJ대한통운 건설부문</option>
+                                <option value="">CJ올리브영</option>
+                                <option value="">CJ올리브네트웍스</option>
+                                <option value="">CJ ENM커머스부문</option>
+                            </optgroup>
+                            <optgroup label="엔터테이먼트 & 미디어">
+                                <option value="">CJ ENM 엔터테인먼트부문</option>
+                                <option value="">CGV</option>
+                            </optgroup>
+                        </select>
+                        <a href="" class="button">GO</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>

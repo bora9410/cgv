@@ -1,0 +1,273 @@
+#chart {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #FAFAFA;
+}
+#chart .wrap {
+  width: 980px;
+}
+#chart .wrap h2{
+  visibility: hidden;
+}
+#chart .wrap .head {
+  margin-bottom: 30px;
+  position: relative;
+}
+#chart .wrap .head header{
+  font-size: 26px;
+  font-weight: 700;
+  color: #222;
+  gap: 15px;
+}
+#chart .wrap .head h3.chart {
+  border-right: 1px solid #ccc;
+  padding-right: 15px;
+  box-sizing: border-box;
+  font-weight: 600;
+  cursor: pointer;
+}
+#chart .wrap .head h3.prev {
+  color: #666;
+  cursor: pointer;
+  font-weight: 600;
+}
+#chart .wrap .head a{
+  position: absolute;
+  right: 10px;
+  font-size: 14px;
+  color: #222;
+  display: inline-block;
+  border-radius: 30px;
+  border: 1px solid #e3e3e3;
+  width: 80px;
+  text-align: end;
+  line-height: 2;
+  padding: 0 10px;
+  box-shadow: 1px 1px 2px #CACACA;
+}
+#chart .wrap .head a::after{
+  content: "";
+  display: inline-block;
+  background-image: url(../img/next.png);
+  width: 10px;
+  height: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 11px;
+}
+/* 현재상영작, 상영예정작 공통 */
+
+#chart .wrap ul {
+  /*! justify-content: space-between; */
+  counter-reset: movie-chart-counter;
+  /*! padding: 30px 20px; */
+}
+#chart .wrap ul.movie{
+  
+}
+#chart .wrap ul.exmovie{
+  
+}
+#chart .wrap ul li{
+  position: relative;
+  width: 175px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#chart .wrap ul li::before{
+  content: "";
+  display: block;
+  width: 170px;
+  height: 235px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 5px 5px 5px #CACACA;
+}
+#chart .wrap ul li::after{
+  content: counter(movie-chart-counter);
+  counter-increment: movie-chart-counter;
+  position: absolute;
+  left: 9px;
+  bottom: 61px;
+  font-weight: 400;
+  font-size: 53px;
+  font-style: italic;
+  color: #fff;
+  text-shadow: 2px 1px 12px #8C8C8C;
+}
+#chart .wrap ul li h4 {
+  line-height: 2.5;
+  text-align: center;
+  font-size: 18px;
+  color: #222;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 170px;
+  font-weight: 500;
+}
+#chart .wrap ul li .egg{
+  justify-content: space-evenly;
+  display: flex;
+  width: 170px;
+}
+#chart .wrap ul li .egg p.eggball{
+  font-size: 15px;
+  /*! padding: 0px 6px; */
+  color: #444;
+  display: flex;
+}
+#chart .wrap ul li .egg p.eggball img{
+  width: 17px;
+  height: 17px;
+  vertical-align: -3px;
+}
+#chart .wrap ul li .egg p.percent{
+  color: #444;
+  font-size: 14px;
+}
+#chart .wrap ul li .hover{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: calc(100% / 4);
+}
+#chart .wrap ul li .hover a{
+  font-size: 15px;
+  border-radius: 10px;
+  background-color: #eee;
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  line-height: 2.5;
+}
+#chart .wrap ul li .hover a.detail{
+  background-color: white;
+  margin-bottom: 10px;
+}
+#chart .wrap ul li .hover a.book{
+  background-color: #DF474E;
+  color: white;
+}
+
+/* 상영작 이미지 */
+#chart .wrap ul.movie li.list_a::before{
+  background-image: url(../img/movie1.jpg);
+}
+#chart .wrap ul.movie li.list_b::before{
+  background-image: url(../img/movie2.jpg);
+}
+#chart .wrap ul.movie li.list_c::before{
+  background-image: url(../img/movie3.jpg);
+}
+#chart .wrap ul.movie li.list_d::before{
+  background-image: url(../img/movie4.jpg);
+}
+#chart .wrap ul.movie li.list_e::before{
+  background-image: url(../img/movie5.jpg);
+}
+#chart .wrap ul.movie li.list_f::before{
+  background-image: url(../img/movie6.jpg);
+}
+#chart .wrap ul.movie li.list_g::before{
+  background-image: url(../img/movie7.jpg);
+}
+#chart .wrap ul.movie li.list_h::before{
+  background-image: url(../img/movie8.jpg);
+}
+#chart .wrap ul.movie li.list_i::before{
+  background-image: url(../img/movie9.jpg);
+}
+#chart .wrap ul.movie li.list_j::before{
+  background-image: url(../img/movie10.jpg);
+}
+/* 예정작 이미지 */
+#chart .wrap ul.exmovie li.list_a::before{
+  background-image: url(../img/ex1.jpg);
+}
+#chart .wrap ul.exmovie li.list_b::before{
+  background-image: url(../img/ex2.jpg);
+}
+#chart .wrap ul.exmovie li.list_c::before{
+  background-image: url(../img/ex3.jpg);
+}
+#chart .wrap ul.exmovie li.list_d::before{
+  background-image: url(../img/ex4.jpg);
+}
+#chart .wrap ul.exmovie li.list_e::before{
+  background-image: url(../img/ex5.jpg);
+}
+#chart .wrap ul.exmovie li.list_f::before{
+  background-image: url(../img/ex6.jpg);
+}
+#chart .wrap ul.exmovie li.list_g::before{
+  background-image: url(../img/ex7.jpg);
+}
+#chart .wrap ul.exmovie li.list_h::before{
+  background-image: url(../img/ex8.jpg);
+}
+#chart .wrap ul.exmovie li.list_i::before{
+  background-image: url(../img/ex9.jpg);
+}
+#chart .wrap ul.exmovie li.list_j::before{
+  background-image: url(../img/ex10.jpg);
+}
+
+/* 슬릭 옆으로 화살표 설정 */
+#chart .wrap ul.movie .slick-prev{
+  z-index: 1;
+  left: -20px;
+  top: 40%;
+}
+#chart .wrap ul.movie .slick-next{
+  z-index: 1;
+  right: -20px;
+  top: 40%;
+}
+#chart .wrap ul.movie button.slick-prev::before {
+  content: "";
+  background-image: url(../img/arrow_back.svg);
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
+#chart .wrap ul.movie button.slick-next::before {
+  content: "";
+  background-image: url(../img/arrow_forward.svg);
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
+#chart .wrap ul.exmovie .slick-prev{
+  z-index: 1;
+  left: -20px;
+  top: 40%;
+}
+#chart .wrap ul.exmovie .slick-next{
+  z-index: 1;
+  right: -20px;
+  top: 40%;
+}
+#chart .wrap ul.exmovie button.slick-prev::before {
+  content: "";
+  background-image: url(../img/arrow_back.svg);
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
+#chart .wrap ul.exmovie button.slick-next::before {
+  content: "";
+  background-image: url(../img/arrow_forward.svg);
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}

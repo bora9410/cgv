@@ -1,0 +1,98 @@
+#event {
+  
+}
+#event .wrap {
+  width: 980px;
+}
+#event .wrap .head {
+  position: relative;
+  padding: 27px 0;
+}
+#event .wrap .head h2 {
+  font-weight: 700;
+  font-size: 26px;
+  color: #222;
+}
+#event .wrap .head a {
+}
+#event .wrap .head a.pause {
+  position: absolute;
+  right: 110px;
+  background-image: url(../img/stop.png);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  border: 1px solid #e3e3e3;
+  font-size: 0;
+  background-repeat: no-repeat;
+  background-size: 10px;
+  background-position: center;
+}
+#event .wrap .head a.watch {
+  position: absolute;
+  right: 0;
+  display: inline-block;
+  border-radius: 30px;
+  border: 1px solid #e3e3e3;
+  width: 80px;
+  text-align: end;
+  line-height: 2;
+  font-size: 14px;
+  padding: 0 10px;
+  box-shadow: 1px 1px 2px #CACACA;
+}
+#event .wrap .head a.watch::after{
+  content: "";
+  display: inline-block;
+  background-image: url(../img/next.png);
+  width: 10px;
+  height: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 11px;
+}
+#event .wrap .contents {
+  display: flex;
+  justify-content: space-between;
+}
+#event .wrap .contents article {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 3 - 20px);
+  margin-right: 20px;
+  height: 268px;
+}
+#event .wrap .contents article a{
+}
+#event .wrap .contents article a .imgbox{
+  width: 310px;
+  height: 207px;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+#event .wrap .contents article a .imgbox img{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transition: transform 0.5s ease 0s;
+  object-fit: cover;
+}
+#event .wrap .contents article:hover a .imgbox img{
+  transform: scale(1.1);
+}
+#event .wrap .contents article a h3 {
+  padding-top: 20px;
+  font-weight: 500;
+  font-size: 18px;
+  color: #222;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+#event .wrap .contents article a p {
+  font-size: 14px;
+  color: #666;
+  padding-top: 11px;
+}

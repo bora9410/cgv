@@ -1,0 +1,115 @@
+/* 공통스타일 class */
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.width-full{
+    width: auto;
+}
+.height-full{
+    height: 100%;
+}
+.wrap{
+    width: 998px;
+    margin: 0 auto;
+}
+.hide{
+    display: none; /* 안보이게 */
+}
+.rbox{
+    width: 300px;
+    height: 300px;
+    background-color: #eee;
+    border-radius: 20px;
+    text-align: center;
+}
+.bgimg{
+    background-repeat: no-repeat;
+    background-size: 61%;
+    background-position-x: 86%;
+    background-position-y: 10%;
+}
+.padding50{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.paddingT50{
+    padding-top: 50px;
+}
+.paddingB50{
+    padding-bottom: 50px;
+}
+.padding100{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.paddingT100{
+    padding-top: 100px;
+}
+.paddingB100{
+    padding-bottom: 100px;
+}
+
+.flex{
+    display: flex;
+}
+.flex-center{
+    justify-content: center;
+}
+.flex-between{
+    justify-content: space-between;
+}
+.flex-align-center{
+    align-items: center;
+}
+.flex-column{
+    flex-direction: column;
+}
+.text-center{
+    text-align: center;
+}
+.h1{
+    font-size: 55px;
+}
+.h2{
+    font-size: 45px;
+}
+.h3{
+    font-size: 35px;
+}
+.h4{
+    font-size: 25px;
+}
+.h5{
+    font-size: 20px;
+}
+.h6{
+    font-size: 16px;
+}
+.p{
+    font-size: 16px;
+    line-height: 1.75;
+    color: #666;
+}
+.block{
+    display: block;
+}
+.more{
+    border: 1px solid;
+    display: inline-block;
+    width: 160px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+}
+.counter{
+  content: counter(movie-chart-counter);
+  counter-increment: movie-chart-counter;
+  position: absolute;
+  left: 9px;
+  bottom: 61px;
+  font-weight: 400;
+  font-size: 53px;
+  font-style: italic;
+  color: #fff;
+  text-shadow: 2px 1px 12px #8C8C8C;
+}
