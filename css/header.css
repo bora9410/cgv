@@ -83,6 +83,9 @@ header .sec nav.bottom form{
     border-right: 1px solid #cacaca;
     padding: 0 5px;
 } 
+header .sec nav.bottom form label{
+    visibility: hidden;
+}
 header .sec nav.bottom form input {
     border: none;
     width: 195px;
