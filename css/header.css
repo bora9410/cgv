@@ -15,14 +15,12 @@ header .wrap nav.top h1 a{
     font-size: 17px;
     font-weight: 200;
 }
-header .wrap nav.top h1 span {
-    display: inline-block;
-    font-size: 0;
-    background-image: url(../img/logo.png);
+header .wrap nav.top h1 a figure{
+    
+}
+header .wrap nav.top h1 a figure img{
     width: 117px;
     height: 53px;
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 header .wrap nav.top ul {
     gap: 30px;
