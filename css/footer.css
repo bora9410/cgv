@@ -68,6 +68,9 @@ footer .wrap .footerbox .familysite select{
   width: 160px;
   padding: 0 10px;
 }
+footer .wrap .footerbox .familysite select > option{
+  display: none;
+}
 footer .wrap .footerbox .familysite select option.famtitle{
   display: none;
 }
