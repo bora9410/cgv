@@ -15,10 +15,7 @@ header .wrap nav.top h1 a{
     font-size: 17px;
     font-weight: 200;
 }
-header .wrap nav.top h1 a figure{
-    
-}
-header .wrap nav.top h1 a figure img{
+header .wrap nav.top h1 a img{
     width: 117px;
     height: 53px;
 }
